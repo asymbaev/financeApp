@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public interface UserService {
 
-    List<User> getUser();
+    List<User> getUsers();
 
     User getUserById(Long id);
 

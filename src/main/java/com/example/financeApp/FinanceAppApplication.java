@@ -47,5 +47,9 @@ private static final Logger logger = LoggerFactory.getLogger(FinanceAppApplicati
 		userRepository.findAll().forEach(us -> logger.info(us.getUserId() + " " + us.getAmount()));
 		amountRepository.findAll().forEach(am -> logger.info(am.getHistory() + " " + am.getAmount()));
 
+		if (user.getAmount() == user2.getAmount()) {
+			System.out.println("Amounts matched");
+		}
+
 	}
 }
