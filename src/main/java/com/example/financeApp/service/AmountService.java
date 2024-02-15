@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 public interface AmountService {
-    List<Amount> getAmount();
+    List<Amount> getAmounts();
     Amount getAmountById(Long id);
     Amount addAmount(Amount amount);
 

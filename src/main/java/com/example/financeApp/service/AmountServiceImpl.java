@@ -17,7 +17,7 @@ public class AmountServiceImpl implements AmountService {
     }
 
     @Override
-    public List<Amount> getAmount() {
+    public List<Amount> getAmounts() {
         return amountRepository.findAll();
     }
 
