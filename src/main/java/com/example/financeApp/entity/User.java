@@ -3,7 +3,7 @@ package com.example.financeApp.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user_Id")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,6 +23,8 @@ public class User {
     private String userId;
     @Column(nullable = false)
     private  double amount;
+
+
 
     public User() {
 
