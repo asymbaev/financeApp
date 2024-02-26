@@ -4,10 +4,10 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
-import java.net.http.HttpHeaders;
 import java.security.Key;
 import java.util.Date;
 
