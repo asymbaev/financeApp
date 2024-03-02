@@ -44,12 +44,16 @@ private static final Logger logger = LoggerFactory.getLogger(FinanceAppApplicati
 		);
 		amountRepository.saveAll(amounts);
 
+
+
+		userRepository.save(new User("user", "$2y$10$g.hyfzRf6dyAPCzx7d4wDOYwMVKEvpM/T4q4f48hwnc5Jyh6Ar/vy", "USER", "2", 2000));
+		userRepository.save(new User("admin", "$2y$10$oOiL3BSfAZjQPugjnpwMfeF92E8deZERQPvL39EEVDaaelzP9BF5i","ADMIN","3", 3000));
+
 		userRepository.findAll().forEach(us -> logger.info(us.getUserId() + " " + us.getAmount()));
 		amountRepository.findAll().forEach(am -> logger.info(am.getHistory() + " " + am.getAmount()));
 
 		if (user.getAmount() == user2.getAmount()) {
 			System.out.println("Amounts matched");
 		}
-
 	}
 }

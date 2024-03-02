@@ -2,6 +2,7 @@ package com.example.financeApp.security;
 
 import com.example.financeApp.exception.AuthEntryPoint;
 import com.example.financeApp.service.UserServiceImpl;
+import com.example.financeApp.service.UserServiceImppl;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfig {
     @Autowired
-    private UserServiceImpl userService;
+    private UserServiceImppl userService;
     @Autowired
     private AuthenticationFilter authenticationFilter;
     @Autowired
@@ -46,5 +47,14 @@ public class SecurityConfig {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userService)
                 .passwordEncoder(new BCryptPasswordEncoder());
+    }
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
+    }
+
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 }
